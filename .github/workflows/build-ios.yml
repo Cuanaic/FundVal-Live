@@ -31,8 +31,8 @@ jobs:
       - name: 编译无签名 iOS App 并生成 IPA
         working-directory: ./frontend/ios/App
         run: |
-          # 强制禁用签名进行编译
-          xcodebuild -workspace App.xcworkspace \
+          # 强制禁用签名进行编译 (改为使用 .xcodeproj)
+          xcodebuild -project App.xcodeproj \
             -scheme App \
             -configuration Release \
             -destination 'generic/platform=iOS' \
